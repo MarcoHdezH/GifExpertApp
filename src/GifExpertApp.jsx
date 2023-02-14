@@ -2,13 +2,16 @@
 import React from 'react'
 import { useState } from 'react'
 import { AddCategory } from './components/addCategory';
+import { GifGrid } from './components/GifGrid';
 
 const GifExpertApp = () => {
 
-   const [categories,setCategories] =useState(['One Punch','Goku']);
+   const [categories,setCategories] =useState(['One Punch','Dragon Ball']);
 
-   const onAddCategory = () =>{
-        setCategories([...categories,'Valorant']);
+   const onAddCategory = (newCategory) =>{
+      if(categories.includes(newCategory))return;        
+
+      setCategories([...categories,newCategory]);
    }
 
   return (
@@ -17,16 +20,18 @@ const GifExpertApp = () => {
         <h1>GifExpertApp</h1>
 
         {/* Input */}
-        <AddCategory/>
+        <AddCategory 
+            onNewCategory = { ( value )=> onAddCategory( value )}
+        />
 
-        {/* Listado de Items */}
-        <button onClick={onAddCategory}>Agregar</button>
-        <ol>
-            {categories.map(category=>{
-                    return <li key={category}>{category}</li>
-                })
-            }
-        </ol>
+        {
+            categories.map((category)=>(
+                <GifGrid 
+                    key={category} 
+                    category={category}
+                />
+            ))
+        }
     </>
 
   )
