@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <GiftItem/>> Debe hacer match con el snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="Valorant"
+      src="https://media2.giphy.com/media/sUOkBnwf8157cVGE57/giphy.gif?cid=f8290431ma5plw4yhw4j4hvrwyvw87y3y9wdriepnxwoy6mw&rid=giphy.gif&ct=g"
+    />
+    <p>
+      Valorant
+    </p>
+  </div>
+</div>
+`;
